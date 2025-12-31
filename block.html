@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flux - Intention Check</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="block-styles.css">
+</head>
+<body>
+
+    <div class="container">
+                
+        <h1>このサイトはブロック対象です。</h1>
+
+        <div class="domain-badge">
+            <span id="target-domain">example.com</span>
+        </div>
+
+        <p class="message">
+            このサイト訪問は<br>
+            本当に必要ですか?
+        </p>
+
+        <div class="actions">
+            <button id="go-back-btn" class="btn-primary">
+                作業に戻る
+            </button>
+
+            <div class="divider">or proceed</div>
+
+            <div class="action-buttons">
+                <div class="time-display" id="default-time-display">
+                    読み込み中...
+                </div>
+                <button id="edit-btn" class="btn-edit">
+                    編集
+                </button>
+                <button id="proceed-btn" class="btn-proceed">
+                    →
+                </button>
+            </div>
+
+            <!-- スライダーバー -->
+            <div class="slider-container" id="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slider-label">
+                        <span class="slider-value" id="slider-value">5分</span>
+                    </div>
+                    <input type="range" id="time-slider" min="1" max="180" value="5" step="1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-time-modal" id="custom-modal">
+        <div class="modal-content">
+            <div class="modal-title">⏱️ 解禁時間を設定</div>
+            <div class="modal-input-group">
+                <input type="number" id="custom-time-input" min="1" max="1440" placeholder="15" />
+                <span>分間</span>
+            </div>
+            <div class="modal-buttons">
+                <button id="modal-cancel-btn" class="btn btn-secondary">キャンセル</button>
+                <button id="modal-ok-btn" class="btn btn-primary">決定</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 多言語対応のスクリプトを読み込み -->
+    <script src="lang/ja.js"></script>
+    <script src="lang/en.js"></script>
+    <script src="lang/i18n.js"></script>
+    <script src="block.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flux</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup-styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="main-section">
+      <div class="toggle-section">
+        <div class="toggle-row">
+          <div class="toggle-label">
+            <div class="toggle-title">拡張機能</div>
+            <div class="toggle-subtitle">ブロック機能の有効/無効</div>
+          </div>
+          <div class="toggle-switch" id="toggle-switch"></div>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-number" id="blocked-count">0</div>
+          <div class="stat-label">Blocked Sites</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="active-count">0</div>
+          <div class="stat-label">Active Now</div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="settings-btn">
+        設定を開く
+      </button>
+    </div>
+  </div>
+  
+  <!-- 多言語対応のスクリプトを読み込み -->
+  <script src="lang/ja.js"></script>
+  <script src="lang/en.js"></script>
+  <script src="lang/i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flux - Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="settings-styles.css">
+</head>
+<body>
+  <!-- サイドバー -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">Flux</div>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="menu-item active" data-section="block-site">
+        <span class="menu-label">Block Site</span>
+      </li>
+      <li class="menu-item" data-section="feedback">
+        <span class="menu-label">Feedback</span>
+      </li>
+      <li class="menu-item" data-section="update">
+        <span class="menu-label">Update</span>
+      </li>
+      <li class="menu-item" data-section="how-to-use">
+        <span class="menu-label">使い方ガイド</span>
+      </li>
+      <li class="menu-item" data-section="language">
+        <span class="menu-label">言語設定</span>
+      </li>
+    </ul>
+    <div class="sidebar-footer">
+      <button class="close-btn" id="close-settings-btn">← 閉じる</button>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツエリア -->
+  <main class="main-content">
+    <!-- Block Site セクション -->
+    <section class="content-section active" id="block-site-section">
+      <div class="section-header-main">
+        <h1 class="section-title">ブロックするサイト</h1>
+        <p class="section-description">集中を妨げるサイトを登録できます。<br>アクセスは一度ブロックされ、許可の為にワンステップ必要です。</p>
+      </div>
+
+      <div class="card">
+        <div class="input-section">
+          <label>新しいサイトを追加</label>
+          <div class="input-group">
+            <input type="text" id="domain-input" placeholder="example.com" autocomplete="off">
+            <button class="add-btn">+</button>
+          </div>
+          <div class="quick-add">
+            <span class="quick-add-label">Quick Add:</span>
+            <button class="chip" data-domain="youtube.com">YouTube</button>
+            <button class="chip" data-domain="x.com">X (Twitter)</button>
+            <button class="chip" data-domain="instagram.com">Instagram</button>
+            <button class="chip" data-domain="facebook.com">Facebook</button>
+            <button class="chip" data-domain="reddit.com">Reddit</button>
+            <button class="chip" data-domain="tiktok.com">TikTok</button>
+          </div>
+        </div>
+
+        <div class="list-section">
+          <div class="list-header">
+            <label>登録済みサイト</label>
+            <span class="count-badge" id="count-badge">0</span><span class="count-badge" id="count-unit"></span>
+          </div>
+          <ul id="blocked-list" class="blocked-list">
+            <li class="empty-state">まだサイトが登録されていません。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback セクション -->
+    <section class="content-section" id="feedback-section">
+      <div class="section-header-main">
+        <h1 class="section-title">フィードバック</h1>
+        <p class="section-description">ご意見・ご要望をお聞かせください。</p>
+      </div>
+
+      <div class="card">
+        <form id="feedback-form" action="https://formspree.io/f/xwvkyjzv" method="POST">
+          <div class="form-group">
+            <label for="feedback-name">お名前(任意)</label>
+            <input type="text" id="feedback-name" name="name" placeholder="山田太郎">
+          </div>
+
+          <div class="form-group">
+            <label for="feedback-email">メールアドレス(任意)</label>
+            <input type="email" id="feedback-email" name="email" placeholder="example@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="feedback-type">フィードバックの種類</label>
+            <select id="feedback-type" name="type" required>
+              <option value="">選択してください</option>
+              <option value="bug">バグ報告</option>
+              <option value="feature">機能要望</option>
+              <option value="improvement">改善提案</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="feedback-message">メッセージ *</label>
+            <textarea id="feedback-message" name="message" rows="6" placeholder="詳細をお聞かせください..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">送信する</button>
+          
+          <div id="feedback-status" class="feedback-status"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Update セクション -->
+    <section class="content-section" id="update-section">
+      <div class="section-header-main">
+        <h1 class="section-title">アップデート情報</h1>
+        <p class="section-description">Fluxの最新情報をお届けします。</p>
+      </div>
+
+      <div class="card">
+        <div class="update-item">
+          <div class="update-header">
+            <span class="update-version">v 0.9.0</span>
+            <span class="update-date">2025-12-31</span>
+          </div>
+          <h3 class="update-title">β版リリース</h3>
+          <ul class="update-list">
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- how to use セクション-->
+    <section class="content-section" id="how-to-use-section">
+      <div class="section-header-main">
+        <h1 class="section-title">使い方ガイド</h1>
+        <p class="section-description">Fluxの基本的な使い方をご紹介します。</p>
+      </div>
+
+      <div class="card">
+        <div class="how-to-card">
+          <h2 class="card-title">サイトの追加方法</h2>
+          <ul class="how-to-list">
+            <li class="how-to-detail">「ブロックするサイト」セクションに移動します。</li>
+            <li class="how-to-detail">入力欄にブロックしたいサイトのドメインを入力します(例: example.com)。</li>
+            <li class="how-to-detail">「+」ボタンをクリックしてサイトを追加します。</li>
+          </ul>
+        </div>
+        <div class="how-to-card">
+          <h2 class="card-title">サイトの削除方法</h2>
+          <ul class="how-to-list">
+            <li class="how-to-detail">「ブロックするサイト」セクションに移動します。</li>
+            <li class="how-to-detail">登録済みサイトリストから削除したいサイトを見つけます。</li>
+            <li class="how-to-detail">各サイトの横にある「×」ボタンをクリックしてサイトを削除します。</li>
+          </ul>
+        </div>
+    </section>
+
+    <!-- 言語設定セクション -->
+    <section class="content-section" id="language-section">
+      <div class="section-header-main">
+        <h1 class="section-title">言語設定</h1>
+        <p class="section-description">表示言語を選択してください。</p>
+      </div>
+
+      <div class="card language-card">
+        <label for="language-select">言語を選択:</label>
+        <select id="language-select">
+          <option value="ja" selected>日本語</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+  </main>
+
+  <!-- 確認モーダル -->
+  <div id="confirm-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">確認</h3>
+      </div>
+      <div class="modal-body">
+        <p id="modal-message"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-btn modal-btn-cancel" id="modal-cancel">キャンセル</button>
+        <button class="modal-btn modal-btn-confirm" id="modal-confirm">適用する</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="lang/ja.js"></script>
+  <script src="lang/en.js"></script>
+  <script src="lang/i18n.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>
