@@ -15,7 +15,7 @@
 
 ## インストール方法（Chrome）
 
-1. このページの右側のサイドバーから **Releases** （v0.9.0-betaと書かれているリンク）ページを開く。
+1. このページの右側のサイドバーから **Releases** （v0.9.0-beta(authentic)と書かれているリンク）ページを開く。
 2. flux.zip という ZIP ファイルをダウンロードする。
 3. ZIP を解凍する。
 4. Chrome で `chrome://extensions` を開く
