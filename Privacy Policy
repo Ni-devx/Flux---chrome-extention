@@ -1,0 +1,45 @@
+# Privacy Policy for Flux
+
+Flux does not collect, transmit, or share any personal data.
+
+## Data Collection
+Flux does not collect any personally identifiable information.  
+All settings and data, including blocked domains, temporary allowances, visit counts, and extension preferences, are stored **locally on the user's device** using Chrome’s local storage.
+
+## Permissions Usage
+Flux uses the following permissions strictly for its core functionality:
+
+- **All URLs**  
+  Used only to compare the current page URL with the user-defined block list in order to determine whether a website should be blocked.
+
+- **webNavigation**  
+  Used to detect page navigations, including single-page applications (SPA), so that blocked websites can be intercepted immediately.
+
+- **tabs**  
+  Used only to redirect tabs that match blocked domains to a local block page.
+
+- **storage**  
+  Used to save user settings locally on the device.
+
+- **alarms**  
+  Used to manage time-based temporary access allowances for blocked websites.
+
+Flux does not read or access page content, form inputs, cookies, or browsing history beyond the current page URL.
+
+## Data Sharing
+Flux does not sell, share, or transfer any user data to third parties.
+
+## Third-Party Services
+Flux does not use any third-party analytics, tracking tools, or external services.
+
+## Data Security
+All data handled by Flux remains on the user's local device and is not transmitted to any external servers.
+
+## Changes to This Policy
+This Privacy Policy may be updated if the functionality of the extension changes.  
+Any updates will be reflected on this page.
+
+## Contact
+If you have any questions about this Privacy Policy, please contact:  
+masktu0209@gmail.com
+Or, send that via the feedback section in the Flux itself.
